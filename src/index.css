@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Lato", sans-serif;
+}
+
+.title {
+  font-family: "Pacifico", cursive;
+}
+
+.grid-repeat {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Pagination Style */
+
+.paginationBttns {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 1px;
+  border-radius: 5px;
+  border: 1px solid rgb(88, 88, 228);
+  color: rgb(88, 88, 228);
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: rgb(88, 88, 228);
+}
+
+.pagintionActive a {
+  color: white;
+  background-color: rgb(88, 88, 228);
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  translate: 50% -50%;
+  z-index: 1000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(0.5px);
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+.overlay-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.26);
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+/* Add this CSS to your stylesheet */
+.arrow {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.group:hover .arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-image {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image.first {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.carousel-image.last {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
